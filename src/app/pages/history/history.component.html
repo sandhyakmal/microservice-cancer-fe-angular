@@ -1,0 +1,50 @@
+ <section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Data History Input</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-hisponsive">
+                        <table class="table table" id="table-1">
+                        <thead>                                 
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Result</th>
+                                <th>Confidence</th>
+                                <th>Cancer Probability</th>
+                                <th>Non Cancer Probability</th>
+                                <th>Date Input</th>
+                                <th>Date Image Capture</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let his of history; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{ his.name }}</td>
+                                <td>{{ his.age }}</td>
+                                <td>{{ his.result }}</td>
+                                <td>{{ (his.confidence * 100).toFixed(2) }} %</td>
+                                <td>{{ (his.cancerProbability * 100).toFixed(2) }} %</td>
+                                <td>{{ (his.nonCancerProbability * 100).toFixed(2) }} %</td>
+                                <td>{{ his.dateInput }}</td>
+                                <td>{{ his.imageDate }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary"
+                                            [routerLink]="['/history-detail', his.id]">
+                                    Detail
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

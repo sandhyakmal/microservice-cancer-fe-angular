@@ -30,9 +30,42 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/style.css",
+              "src/assets/css/components.css",
+              "src/assets/modules/bootstrap/css/bootstrap.min.css",
+              "src/assets/modules/fontawesome/css/all.min.css",
+              "src/assets/modules/summernote/summernote-bs4.css",
+              "src/assets/modules/jquery-selectric/selectric.css",
+              "src/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css",
+              "src/assets/modules/datatables/datatables.min.css",
+              "src/assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css",
+              "src/assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/modules/jquery.min.js",
+              "src/assets/modules/popper.js",
+              "src/assets/modules/tooltip.js",
+              "src/assets/modules/bootstrap/js/bootstrap.min.js",
+              "src/assets/js/stisla.js",
+              "src/assets/js/custom.js",
+              "src/assets/modules/nicescroll/jquery.nicescroll.min.js",
+              "src/assets/modules/moment.min.js",
+              "src/assets/modules/jquery-pwstrength/jquery.pwstrength.min.js",
+              "src/assets/modules/jquery-selectric/jquery.selectric.min.js",
+              "src/assets/js/page/auth-register.js",
+              "src/assets/js/scripts.js",
+              "src/assets/js/custom.js",
+              "src/assets/modules/summernote/summernote-bs4.js",
+              "src/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js",
+              "src/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js",
+              "src/assets/js/page/features-post-create.js",
+              "src/assets/modules/datatables/datatables.min.js",
+              "src/assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js",
+              "src/assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js",
+              "src/assets/modules/jquery-ui/jquery-ui.min.js",
+              "src/assets/js/page/modules-datatables.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -41,6 +74,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -102,5 +141,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7290f51e-722c-4ecf-97d2-b6dbf18a2ded"
   }
 }

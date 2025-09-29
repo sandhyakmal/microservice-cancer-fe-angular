@@ -1,0 +1,150 @@
+<div class="section">
+  <div class="section-body">
+    <div class="container mt-2">
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4>Classsification Cancer</h4>
+          </div>
+
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit()" #cancerForm="ngForm">
+              <div class="row">
+                <div class="form-group col-6">
+                  <label for="name">Nama</label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    [(ngModel)]="formData.name"
+                    autofocus
+                  />
+                </div>
+                <div class="form-group col-6">
+                  <label for="age">Usia</label>
+                  <input
+                    id="age"
+                    type="text"
+                    class="form-control"
+                    name="age"
+                    [(ngModel)]="formData.age"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-group">
+                  <label>Tanggal Ambil Foto</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    name="imageDate"
+                    [(ngModel)]="formData.imageDate"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-group">
+                  <label>File</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    (change)="onFileSelected($event)"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg btn-block"
+                  [disabled]="!cancerForm.form.valid"
+                >
+                  Submit
+                </button>
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-lg btn-block"
+                  (click)="resetForm()"
+                >
+                  Reset
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div *ngIf="result.predictedClass" class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div
+            class="col-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h4>Result Prediction</h4>
+              </div>
+
+              <div class="card-body">
+                  <div class="row">
+                    <div class="form-group col-12">
+                      <label for="name">Predicted</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="{{ result.predictedClass }}"
+                        autofocus
+                      />
+                    </div>
+
+                    <div class="form-group col-12">
+                      <label for="confidence">Confidence</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="{{ result.confidence }}"
+                        autofocus
+                      />
+                    </div>
+
+                    <div class="form-group col-12">
+                      <label for="cancer">Probabilities Cancer</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="{{ result.probCancer }}"
+                        autofocus
+                      />
+                    </div>
+
+                    <div class="form-group col-12">
+                      <label for="noncancer">Probabilities Non-Cancer</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="{{ result.probNonCancer }}"
+                        autofocus
+                      />
+                    </div>
+
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
