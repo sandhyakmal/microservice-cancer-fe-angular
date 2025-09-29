@@ -1,31 +1,46 @@
-<<<<<<< HEAD
-# Fe
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+/ △ \ | '_ \ / _` | | | | |/ _` | '**| | | | | | |
+/ \_** \| | | | (_| | |_| | | (\_| | | | |**_| |_** | |
+/_/ \_\_| |_|\_\_, |\__,_|\_|\__,_|\_| \_**\_|\_\_\_**|**_|
+|_**/
 
-## Development server
+Angular CLI: 17.3.17
+Node: 18.16.0
+Package Manager: npm 9.5.1
+OS: darwin arm64
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Angular: 17.3.12
+... animations, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, platform-server
+... router
 
-## Code scaffolding
+## Package Version
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@angular-devkit/architect 0.1703.17
+@angular-devkit/build-angular 17.3.17
+@angular-devkit/core 17.3.17
+@angular-devkit/schematics 17.3.17
+@angular/cli 17.3.17
+@schematics/angular 17.3.17
+rxjs 7.8.2
+typescript 5.4.5
+zone.js 0.14.10
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+STEP INSTALLTION !!
 
-## Running unit tests
+# using ubuntu/mac
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+nvm install 18.16.0
+nvm use 18.16.0
+npm install -g @angular/cli@17.3.17
 
-## Running end-to-end tests
+# using windows
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+download node 18.16.0
+npm install -g @angular/cli@17.3.17
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# microservice-cancer-fe-angular
->>>>>>> 79be6a8efe9c44809f0fa5cc47443d0d088132d1
+after installation clone this poject and tunning using "ng serve"
