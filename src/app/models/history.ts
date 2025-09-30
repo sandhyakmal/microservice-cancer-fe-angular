@@ -3,6 +3,7 @@ export interface History {
     name: string;
     age: number;
     image: string;
+    imagePath: string;
     result: string;
     confidence: number;
     cancerProbability: number;

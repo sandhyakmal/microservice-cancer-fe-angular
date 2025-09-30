@@ -3,13 +3,18 @@
     <nav class="navbar navbar-expand-lg main-navbar mt-3">
         <a href="/main" class="navbar-brand sidebar-gone-hide">Classsification App</a>
         <div class="nav-collapse">
-          <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
-              <i class="fas fa-ellipsis-v"></i>
-          </a>
-          <ul class="navbar-nav ">
-              <li class="nav-item"><a href="/predict" class="nav-link">Predict</a></li>
-              <li class="nav-item"><a href="/history" class="nav-link">History</a></li>
-          </ul>
+            <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
+                <i class="fas fa-ellipsis-v"></i>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item" routerLinkActive="active">
+                    <a routerLink="/predict" class="nav-link">Predict</a>
+                </li>
+
+                <li class="nav-item" routerLinkActive="active">
+                    <a routerLink="/history" class="nav-link">History</a>
+                </li>
+            </ul>
         </div>
     </nav>
 

@@ -1,1 +1,78 @@
-<p>history-detail works!</p>
+<section class="section">
+    <div class="section-header">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                  <div class="card-header">
+                    <h4>Foto Upload</h4>
+                  </div>
+                  <div class="card-body">
+                    <div>
+                       <img [src]="getImageUrl(history.imagePath)" alt="uploaded image"class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+        </div>
+
+        <div class="col-md-6">
+        <form id="setting-form">
+            <div class="card" id="settings-card">
+            <div class="card-header">
+                <h4>Detail Data</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Nama</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="name" [(ngModel)]="history.name" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Age</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="age" [(ngModel)]="history.age" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Result</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="result" [(ngModel)]="history.result" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Confidence</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="confidence" [(ngModel)]="history.confidence" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Cancer Probability</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="cancerProbability" [(ngModel)]="history.cancerProbability" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Non-Cancer Probability</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="nonCancerProbability" [(ngModel)]="history.nonCancerProbability" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Date Input</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="dateInput" [(ngModel)]="history.dateInput" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+                <div class="form-group row align-items-center">
+                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Image Date</label>
+                    <div class="col-sm-6 col-md-9">
+                        <input type="text" name="imageDate" [(ngModel)]="history.imageDate" readonly class="form-control" id="site-title">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</section>

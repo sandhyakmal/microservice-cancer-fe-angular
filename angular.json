@@ -40,7 +40,8 @@
               "src/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css",
               "src/assets/modules/datatables/datatables.min.css",
               "src/assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css",
-              "src/assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css"
+              "src/assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css",
+              "src/assets/modules/fontawesome/css/all.min.css"
             ],
             "scripts": [
               "src/assets/modules/jquery.min.js",
@@ -64,7 +65,8 @@
               "src/assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js",
               "src/assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js",
               "src/assets/modules/jquery-ui/jquery-ui.min.js",
-              "src/assets/js/page/modules-datatables.js"
+              "src/assets/js/page/modules-datatables.js",
+              "src/assets/modules/chocolat/dist/js/jquery.chocolat.min.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
