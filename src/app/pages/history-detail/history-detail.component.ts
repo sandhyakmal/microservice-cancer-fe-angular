@@ -49,4 +49,5 @@ export class HistoryDetailComponent {
     return `${environment.fileUrl}/${imageUrl}`;
   }
 
+
 }

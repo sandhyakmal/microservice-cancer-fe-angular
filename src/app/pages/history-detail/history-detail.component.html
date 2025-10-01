@@ -42,19 +42,19 @@
                 <div class="form-group row align-items-center">
                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Confidence</label>
                     <div class="col-sm-6 col-md-9">
-                        <input type="text" name="confidence" [(ngModel)]="history.confidence" readonly class="form-control" id="site-title">
+                        <input type="text" name="confidence" [value]="(history.confidence * 100).toFixed(2) + ' ' + '%'" readonly class="form-control" id="site-title">
                     </div>
                 </div>
                 <div class="form-group row align-items-center">
                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Cancer Probability</label>
                     <div class="col-sm-6 col-md-9">
-                        <input type="text" name="cancerProbability" [(ngModel)]="history.cancerProbability" readonly class="form-control" id="site-title">
+                        <input type="text" name="cancerProbability" [value]="(history.cancerProbability * 100).toFixed(2) + ' ' + '%'" readonly class="form-control" id="site-title">
                     </div>
                 </div>
                 <div class="form-group row align-items-center">
                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Non-Cancer Probability</label>
                     <div class="col-sm-6 col-md-9">
-                        <input type="text" name="nonCancerProbability" [(ngModel)]="history.nonCancerProbability" readonly class="form-control" id="site-title">
+                        <input type="text" name="nonCancerProbability" [value]="(history.nonCancerProbability * 100).toFixed(2) + ' ' + '%'" readonly class="form-control" id="site-title">
                     </div>
                 </div>
                 <div class="form-group row align-items-center">
