@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';  
 import { environment } from '../../../enviroment/enviroment';
 import { PredictResponse } from '../../models/predict-response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-predict',
@@ -28,7 +29,9 @@ export class PredictComponent {
     probNonCancer: ''
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
   ngOnInit() {
     this.resetForm();
@@ -77,24 +80,40 @@ export class PredictComponent {
 
     console.log('Submitting form with data:', this.formData);
 
-    this.result = this.formData;
+    // this.result = this.formData;
    
-    this.http.post<PredictResponse>(`${environment.apiUrl}/predict`, uploadData).subscribe({
-        next: (res) => {
+    this.http.post<PredictResponse>(`${environment.apiUrl}/v2/predict`, uploadData).subscribe({
+      next: (res) => {
+        console.log('API Response:', res);
 
-          this.result.predictedClass = res.predicted_class;
-          this.result.confidence = res.confidence;
-          this.result.probCancer = res.probabilities.Cancer;
-          this.result.probNonCancer = res.probabilities['Non-Cancer'];
-
-
-          console.log('Result set to:', this.result);
-        },
-        error: (err) => {
-          console.error('Error:', err);
-          alert('Gagal mengirim data');
+        if (res.status === 'Success' && res.data) {
+          // mapping hasil prediksi ke result
+          this.result.predictedClass = res.data.predicted_class;
+          this.result.confidence = res.data.confidence;
+          this.result.probCancer = res.data.probabilities.Cancer;
+          this.result.probNonCancer = res.data.probabilities['Non-Cancer'];
+        } else {
+          // handle kalau status Error tapi gak dilempar ke error handler
+          alert(`Gagal: ${res.message}`);
         }
-      });
+
+        console.log('Result set to:', this.result);
+      },
+        error: (err) => {
+        console.error('Error:', err);
+
+        // Jika server memang mengirim pesan error seperti di contohmu
+        if (err.status === 400 && err.error && err.error.message) {
+          alert(`Gagal: ${err.error.message}`);
+        } 
+        // fallback jika error tidak dalam format yang diharapkan
+        else if (err.error?.message) {
+          alert(`Gagal: ${err.error.message}`);
+        } else {
+          alert('Terjadi kesalahan saat mengirim data.');
+        }
+      }
+    });
   }
   
 }
